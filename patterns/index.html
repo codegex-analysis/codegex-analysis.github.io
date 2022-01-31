@@ -1,0 +1,799 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://codegex-analysis.github.io/patterns/">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.9">
+    
+    
+      
+        <title>Patterns - Codegex</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.2b4465f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#motivating-study" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Codegex" class="md-header__button md-logo" aria-label="Codegex" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Codegex
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Patterns
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/codegex-analysis/Codegex/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Codegex" class="md-nav__button md-logo" aria-label="Codegex" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Codegex
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/codegex-analysis/Codegex/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Patterns
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Patterns
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#motivating-study" class="md-nav__link">
+    Motivating Study
+  </a>
+  
+    <nav class="md-nav" aria-label="Motivating Study">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#research-questions" class="md-nav__link">
+    Research Questions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#codegex-patterns" class="md-nav__link">
+    Codegex patterns
+  </a>
+  
+    <nav class="md-nav" aria-label="Codegex patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#number-of-implemented-patterns" class="md-nav__link">
+    Number of Implemented Patterns
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supported-patterns" class="md-nav__link">
+    Supported patterns
+  </a>
+  
+    <nav class="md-nav" aria-label="Supported patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bad-practice-bad_practice" class="md-nav__link">
+    Bad practice (BAD_PRACTICE)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#correctness-correctness" class="md-nav__link">
+    Correctness (CORRECTNESS)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#malicious-code-vulnerability-malicious_code" class="md-nav__link">
+    Malicious code vulnerability (MALICIOUS_CODE)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multithreaded-correctness-mt_correctness" class="md-nav__link">
+    Multithreaded correctness (MT_CORRECTNESS)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance-performance" class="md-nav__link">
+    Performance (PERFORMANCE)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dodgy-code-style" class="md-nav__link">
+    Dodgy code (STYLE)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Evaluation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Evaluation" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Evaluation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../comparison/" class="md-nav__link">
+        Comparison with SpotBugs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr/" class="md-nav__link">
+        Pull Requests
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../issues/" class="md-nav__link">
+        Filed Issues in SpotBugs
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#motivating-study" class="md-nav__link">
+    Motivating Study
+  </a>
+  
+    <nav class="md-nav" aria-label="Motivating Study">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#research-questions" class="md-nav__link">
+    Research Questions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#codegex-patterns" class="md-nav__link">
+    Codegex patterns
+  </a>
+  
+    <nav class="md-nav" aria-label="Codegex patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#number-of-implemented-patterns" class="md-nav__link">
+    Number of Implemented Patterns
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supported-patterns" class="md-nav__link">
+    Supported patterns
+  </a>
+  
+    <nav class="md-nav" aria-label="Supported patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bad-practice-bad_practice" class="md-nav__link">
+    Bad practice (BAD_PRACTICE)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#correctness-correctness" class="md-nav__link">
+    Correctness (CORRECTNESS)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#malicious-code-vulnerability-malicious_code" class="md-nav__link">
+    Malicious code vulnerability (MALICIOUS_CODE)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multithreaded-correctness-mt_correctness" class="md-nav__link">
+    Multithreaded correctness (MT_CORRECTNESS)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance-performance" class="md-nav__link">
+    Performance (PERFORMANCE)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dodgy-code-style" class="md-nav__link">
+    Dodgy code (STYLE)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+<a href="https://github.com/codegex-analysis/Codegex/edit/master/docs/patterns.md" title="Edit this page" class="md-content__button md-icon">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+</a>
+
+
+  <h1>Patterns</h1>
+
+<p>The bug patterns in Codegex are derived from SpotBugs. We select SpotBugs because it (1) is the most well-known and most used static analyzer, and (2) can detect more diverse types of bugs than other tools (e.g., Error Prone, PMD, Infer).</p>
+<h2 id="motivating-study">Motivating Study</h2>
+<p>Static analysis tools rely on <em>bug patterns</em> to detect a potential problem or bug in a given input program. We conducted a study of <a href="https://spotbugs.readthedocs.io/en/stable/bugDescriptions.html">SpotBugs patterns</a> and divide them into four categories (inter-class, class, method and statement) according to the context scope they use. </p>
+<h3 id="research-questions">Research Questions</h3>
+<p><strong>RQ1</strong>: What is the scope of analysis needed to detect a bug pattern in SpotBugs? </p>
+<p><strong>RQ2</strong>: What program analysis techniques are important for detecting a bug pattern in SpotBugs?</p>
+<p>We provides the link of study table of SpotBugs' 451 patterns (2021/01) <a href="../resources/Study_of_Spotbugs.xlsx">here</a>.</p>
+<div align="center">
+    <img src="../images/study_summary.png">
+</div>
+
+<h2 id="codegex-patterns">Codegex patterns</h2>
+<h3 id="number-of-implemented-patterns">Number of Implemented Patterns</h3>
+<table>
+<thead>
+<tr>
+<th align="left"><strong>Project</strong></th>
+<th align="right"><strong>Number of Patterns</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Bad practice (BAD_PRACTICE)</td>
+<td align="right">23</td>
+</tr>
+<tr>
+<td align="left">Correctness (CORRECTNESS)</td>
+<td align="right">37</td>
+</tr>
+<tr>
+<td align="left">Malicious code vulnerability (MALICIOUS_CODE)</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left">Multithreaded correctness (MT_CORRECTNESS)</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="left">Performance (PERFORMANCE)</td>
+<td align="right">15</td>
+</tr>
+<tr>
+<td align="left">Dodgy code (STYLE)</td>
+<td align="right">8</td>
+</tr>
+<tr>
+<td align="left">Total</td>
+<td align="right">89</td>
+</tr>
+</tbody>
+</table>
+<h3 id="supported-patterns">Supported patterns</h3>
+<h4 id="bad-practice-bad_practice">Bad practice (BAD_PRACTICE)</h4>
+<ol>
+<li>CNT: Rough value of known constant found (CNT_ROUGH_CONSTANT_VALUE)</li>
+<li>UI: Usage of GetResource may be unsafe if class is extended (UI_INHERITANCE_UNSAFE_GETRESOURCE)</li>
+<li>IMSE: Dubious catching of IllegalMonitorStateException (IMSE_DONT_CATCH_IMSE)</li>
+<li>Nm: Use of identifier that is a keyword in later versions of Java (NM_FUTURE_KEYWORD_USED_AS_IDENTIFIER)</li>
+<li>Nm: Use of identifier that is a keyword in later versions of Java (NM_FUTURE_KEYWORD_USED_AS_MEMBER_IDENTIFIER)</li>
+<li>Dm: Method invokes dangerous method runFinalizersOnExit (DM_RUN_FINALIZERS_ON_EXIT)</li>
+<li>FI: Explicit invocation of finalizer (FI_EXPLICIT_INVOCATION)</li>
+<li>ES: Comparison of String objects using == or != (ES_COMPARING_STRINGS_WITH_EQ)</li>
+<li>Nm: Method names should start with a lower case letter (NM_METHOD_NAMING_CONVENTION)</li>
+<li>Nm: Class names shouldn’t shadow simple name of implemented interface (NM_SAME_SIMPLE_NAME_AS_INTERFACE)</li>
+<li>Nm: Class names shouldn’t shadow simple name of superclass (NM_SAME_SIMPLE_NAME_AS_SUPERCLASS)</li>
+<li>Nm: Class names should start with an upper case letter (NM_CLASS_NAMING_CONVENTION)</li>
+<li>Nm: Class is not derived from an Exception, even though it is named as such (NM_CLASS_NOT_EXCEPTION)</li>
+<li>Se: The readResolve method must be declared with a return type of Object. (SE_READ_RESOLVE_MUST_RETURN_OBJECT)</li>
+<li>Se: serialVersionUID isn’t final (SE_NONFINAL_SERIALVERSIONID)</li>
+<li>Se: serialVersionUID isn’t static (SE_NONSTATIC_SERIALVERSIONID)</li>
+<li>Se: serialVersionUID isn’t long (SE_NONLONG_SERIALVERSIONID)</li>
+<li>RC: Suspicious reference comparison of Boolean values (RC_REF_COMPARISON_BAD_PRACTICE_BOOLEAN)</li>
+<li>FS: Format string should use %n rather than n (VA_FORMAT_STRING_USES_NEWLINE)</li>
+<li>BIT: Check for sign of bitwise operation (BIT_SIGNED_CHECK)</li>
+<li>DMI: Random object created and used only once (DMI_RANDOM_USED_ONLY_ONCE)</li>
+<li>PZ: Don’t reuse entry objects in iterators (PZ_DONT_REUSE_ENTRY_OBJECTS_IN_ITERATORS)</li>
+<li>DMI: Don’t use removeAll to clear a collection (DMI_USING_REMOVEALL_TO_CLEAR_COLLECTION)</li>
+</ol>
+<h4 id="correctness-correctness">Correctness (CORRECTNESS)</h4>
+<ol>
+<li>IL: A collection is added to itself (IL_CONTAINER_ADDED_TO_ITSELF)</li>
+<li>Dm: Useless/vacuous call to EasyMock method (DMI_VACUOUS_CALL_TO_EASYMOCK_METHOD)</li>
+<li>DMI: BigDecimal constructed from double that isn’t represented precisely (DMI_BIGDECIMAL_CONSTRUCTED_FROM_DOUBLE)</li>
+<li>RV: Random value from 0 to 1 is coerced to the integer 0 (RV_01_TO_INT)</li>
+<li>Dm: Incorrect combination of Math.max and Math.min (DM_INVALID_MIN_MAX)</li>
+<li>Nm: Class defines hashcode(); should it be hashCode()? (NM_LCASE_HASHCODE)</li>
+<li>Nm: Class defines tostring(); should it be toString()? (NM_LCASE_TOSTRING)</li>
+<li>Nm: Class defines equal(Object); should it be equals(Object)? (NM_BAD_EQUAL)</li>
+<li>Se: The readResolve method must not be declared as a static method. (SE_READ_RESOLVE_IS_STATIC)</li>
+<li>Se: Method must be private in order for serialization to work (SE_METHOD_MUST_BE_PRIVATE)</li>
+<li>RV: Exception created and dropped rather than thrown (RV_EXCEPTION_NOT_THROWN)</li>
+<li>DMI: Reversed method arguments (DMI_ARGUMENTS_WRONG_ORDER)</li>
+<li>EC: Call to equals(null) (EC_NULL_ARG)</li>
+<li>BIT: Bitwise OR of signed byte value (BIT_IOR_OF_SIGNED_BYTE)</li>
+<li>BIT: Check for sign of bitwise operation involving negative number (BIT_SIGNED_CHECK_HIGH_BIT)</li>
+<li>BIT: Incompatible bit masks (BIT_AND)</li>
+<li>BIT: Check to see if ((…) &amp; 0) == 0 (BIT_AND_ZZ)</li>
+<li>BIT: Incompatible bit masks (BIT_IOR)</li>
+<li>SA: Self assignment of field (SA_FIELD_SELF_ASSIGNMENT)</li>
+<li>SA: Nonsensical self computation involving a field (e.g., x &amp; x) (SA_FIELD_SELF_COMPUTATION)</li>
+<li>SA: Nonsensical self computation involving a variable (e.g., x &amp; x) (SA_LOCAL_SELF_COMPUTATION)</li>
+<li>SA: Self comparison of field with itself (SA_FIELD_SELF_COMPARISON)</li>
+<li>SA: Self comparison of value with itself (SA_LOCAL_SELF_COMPARISON)</li>
+<li>DLS: Useless increment in return statement (DLS_DEAD_LOCAL_INCREMENT_IN_RETURN)</li>
+<li>FE: Doomed test for equality to NaN (FE_TEST_IF_EQUAL_TO_NOT_A_NUMBER)</li>
+<li>BC: Impossible downcast of toArray() result (BC_IMPOSSIBLE_DOWNCAST_OF_TOARRAY)</li>
+<li>RE: “.” or “|” used for regular expression (RE_POSSIBLE_UNINTENDED_PATTERN)</li>
+<li>RE: File.separator used for regular expression (RE_CANT_USE_FILE_SEPARATOR_AS_REGULAR_EXPRESSION)</li>
+<li>DLS: Overwritten increment (DLS_OVERWRITTEN_INCREMENT)</li>
+<li>BSHIFT: Possible bad parsing of shift operation (BSHIFT_WRONG_ADD_PRIORITY)</li>
+<li>IM: Integer multiply of result of integer remainder (IM_MULTIPLYING_RESULT_OF_IREM)</li>
+<li>USELESS_STRING: Invocation of toString on an unnamed array (DMI_INVOKING_TOSTRING_ON_ANONYMOUS_ARRAY)</li>
+<li>DMI: Bad constant value for month (DMI_BAD_MONTH)</li>
+<li>QBA: Method assigns boolean literal in boolean expression (QBA_QUESTIONABLE_BOOLEAN_ASSIGNMENT)</li>
+<li>DMI: Vacuous call to collections (DMI_VACUOUS_SELF_COLLECTION_CALL)</li>
+<li>DMI: D’oh! A nonsensical method invocation (DMI_DOH)</li>
+<li>DMI: Collections should not contain themselves (DMI_COLLECTIONS_SHOULD_NOT_CONTAIN_THEMSELVES)</li>
+</ol>
+<h4 id="malicious-code-vulnerability-malicious_code">Malicious code vulnerability (MALICIOUS_CODE)</h4>
+<ol>
+<li>FI: Finalizer should be protected, not public (FI_PUBLIC_SHOULD_BE_PROTECTED)</li>
+</ol>
+<h4 id="multithreaded-correctness-mt_correctness">Multithreaded correctness (MT_CORRECTNESS)</h4>
+<ol>
+<li>STCAL: Static Calendar field (STCAL_STATIC_CALENDAR_INSTANCE)</li>
+<li>STCAL: Static DateFormat (STCAL_STATIC_SIMPLE_DATE_FORMAT_INSTANCE)</li>
+<li>VO: A volatile reference to an array doesn’t treat the array elements as volatile (VO_VOLATILE_REFERENCE_TO_ARRAY)</li>
+<li>WL: Synchronization on getClass rather than class literal (WL_USING_GETCLASS_RATHER_THAN_CLASS_LITERAL)</li>
+<li>No: Using notify() rather than notifyAll() (NO_NOTIFY_NOT_NOTIFYALL)</li>
+</ol>
+<h4 id="performance-performance">Performance (PERFORMANCE)</h4>
+<ol>
+<li>Dm: Maps and sets of URLs can be performance hogs (DMI_COLLECTION_OF_URLS)</li>
+<li>Dm: Method invokes inefficient new String(String) constructor (DM_STRING_CTOR)</li>
+<li>Dm: Method invokes inefficient new String() constructor (DM_STRING_VOID_CTOR)</li>
+<li>Dm: Method invokes inefficient Boolean constructor; use Boolean.valueOf(…) instead (DM_BOOLEAN_CTOR)</li>
+<li>Bx: Method invokes inefficient Number constructor; use static valueOf instead (DM_NUMBER_CTOR)</li>
+<li>Bx: Method invokes inefficient floating-point Number constructor; use static valueOf instead (DM_FP_NUMBER_CTOR)</li>
+<li>Bx: Method allocates a boxed primitive just to call toString (DM_BOXED_PRIMITIVE_TOSTRING)</li>
+<li>Bx: Boxing/unboxing to parse a primitive (DM_BOXED_PRIMITIVE_FOR_PARSING)</li>
+<li>Bx: Boxing a primitive to compare (DM_BOXED_PRIMITIVE_FOR_COMPARE)</li>
+<li>Bx: Primitive value is boxed and then immediately unboxed (BX_BOXING_IMMEDIATELY_UNBOXED)</li>
+<li>Bx: Primitive value is boxed then unboxed to perform primitive coercion (BX_BOXING_IMMEDIATELY_UNBOXED_TO_PERFORM_COERCION)</li>
+<li>Dm: Method allocates an object, only to get the class object (DM_NEW_FOR_GETCLASS)</li>
+<li>Dm: Use the nextInt method of Random rather than nextDouble to generate a random integer (DM_NEXTINT_VIA_NEXTDOUBLE)</li>
+<li>IIO: Inefficient use of String.indexOf(String) (IIO_INEFFICIENT_INDEX_OF)</li>
+<li>IIO: Inefficient use of String.lastIndexOf(String) (IIO_INEFFICIENT_LAST_INDEX_OF)</li>
+</ol>
+<h4 id="dodgy-code-style">Dodgy code (STYLE)</h4>
+<ol>
+<li>NP: Immediate dereference of the result of readLine() (NP_IMMEDIATE_DEREFERENCE_OF_READLINE)</li>
+<li>RV: Method discards result of readLine after checking if it is non-null (RV_DONT_JUST_NULL_CHECK_READLINE)</li>
+<li>UCF: Useless control flow to next line (UCF_USELESS_CONTROL_FLOW_NEXT_LINE)</li>
+<li>SA: Self assignment of local variable (SA_LOCAL_SELF_ASSIGNMENT)</li>
+<li>SA: Double assignment of local variable (SA_LOCAL_DOUBLE_ASSIGNMENT)</li>
+<li>SA: Double assignment of field (SA_FIELD_DOUBLE_ASSIGNMENT)</li>
+<li>DMI: Code contains a hard coded reference to an absolute pathname (DMI_HARDCODED_ABSOLUTE_FILENAME)</li>
+<li>DMI: Invocation of substring(0), which returns the original value (DMI_USELESS_SUBSTRING)</li>
+</ol>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href=".." class="md-footer__link md-footer__link--prev" aria-label="Previous: Home" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Home
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../comparison/" class="md-footer__link md-footer__link--next" aria-label="Next: Comparison with SpotBugs" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Comparison with SpotBugs
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.22074ed6.min.js"}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.960e086b.min.js"></script>
+      
+    
+  </body>
+</html>
